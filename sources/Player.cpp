@@ -112,27 +112,26 @@ namespace pandemic
     bool Player::discover_cure_throw_cards(Color color)
     {
         vector<City> discover_cure_cards;
-       // discover_cure_cards.reserve((unsigned long)n);
-       for(City city : this->owned_cards)
-       {
-           if(board.get_city_color(city) == color)
-           {
-               discover_cure_cards.push_back(city);
-           }
-           if(discover_cure_cards.size() == this->n)
-           {
-               break;
-           }
-       }
-       if(discover_cure_cards.size() < this->n)
-       {
-           return false;
-       }
-       for(City city : discover_cure_cards)
-       {
-           this->throw_card(city);
-       }
-       return true;
+        for(City city : this->owned_cards)
+        {
+            if(board.get_city_color(city) == color)
+            {
+                discover_cure_cards.push_back(city);
+            }
+            if(discover_cure_cards.size() == this->n)
+            {
+                break;
+            }
+        }
+        if(discover_cure_cards.size() < this->n)
+        {
+            return false;
+        }
+        for(City city : discover_cure_cards)
+        {
+            this->throw_card(city);
+        }
+        return true;
     }
 
     bool Player::can_discover_cure(Color color)

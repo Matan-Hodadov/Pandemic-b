@@ -11,9 +11,6 @@ using namespace std;
 
 namespace pandemic
 {
-    // unordered_map<City, unordered_set<City>> Board::cities_connections;
-    // unordered_map<City, Color> Board::cities_colors;
-
     const unordered_map<string, Color> Board::colors_names = {
         {"Black", Color::Black},
         {"Blue", Color::Blue},
@@ -106,7 +103,6 @@ namespace pandemic
 
     ostream& operator << (ostream& os, Board& board)
     {
-        // os << boolalpha << endl;
         os << "Cities details:" << endl;
         for (auto city_diseaselvl_row : board.city_diseaselvl)
         {
@@ -134,32 +130,17 @@ namespace pandemic
 
     bool Board::have_research_station(City city) const
     {
-        // if(this->city_station.find(city) != this->city_station.end())
-        // {
-        //     return true;
-        // }
-        // return false;
         return this->city_station.find(city) != this->city_station.end();
     }
 
     Color Board::get_city_color(City city) const
     {
         return this->cities_colors.at(city);
-        // if(this->cities_colors.find(city) != this->cities_colors.end())
-        // {
-        //     return this->cities_colors.at(city);
-        // }
-        // return;
     }
 
     bool Board::is_cities_connected(City city1, City city2) const
     {
         auto connected_cities = this->cities_connections.at(city1);
-        // if(connected_cities.find(city2) == connected_cities.end())
-        // {
-        //     return false;
-        // }
-        // return true;
         return connected_cities.find(city2) != connected_cities.end();
     }
 
@@ -170,11 +151,6 @@ namespace pandemic
 
     bool Board::have_cure(Color color) const
     {
-        // if(this->city_medicine.find(color) == this->city_medicine.end())
-        // {
-        //     return false;
-        // }
-        // return true;
         return this->city_medicine.find(color) != this->city_medicine.end();
     }
 
@@ -209,13 +185,6 @@ namespace pandemic
 
     bool Board::is_clean()
     {
-        // for(int i = 0; i < 48;i++)
-        // {
-        //     if (this->city_diseaselvl[(City)i] > 0)
-        //     {
-        //         return false;
-        //     }
-        // }   
         for(auto city_desease_row : this->city_diseaselvl)
         {
             if(city_desease_row.second > 0)

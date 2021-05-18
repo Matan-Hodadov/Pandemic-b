@@ -1,6 +1,5 @@
 #include "Medic.hpp"
 
-// #include "Player.hpp"
 using namespace std;
 
 namespace pandemic

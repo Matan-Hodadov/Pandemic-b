@@ -1,6 +1,5 @@
 #include "FieldDoctor.hpp"
 
-// #include "Player.hpp"
 
 namespace pandemic
 {

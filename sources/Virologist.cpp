@@ -1,6 +1,5 @@
 #include "Virologist.hpp"
 
-// #include "Player.hpp"
 using namespace std;
 
 namespace pandemic
@@ -14,11 +13,6 @@ namespace pandemic
 
     bool Virologist::can_treat(City city)
     {
-        // if(board[city] > 0)
-        // {
-        //     return true;
-        // }
-        // return false;
         return board[city] > 0;
     }
 

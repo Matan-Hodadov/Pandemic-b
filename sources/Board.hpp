@@ -18,8 +18,6 @@ namespace pandemic
         std::unordered_set<Color> city_medicine;
         std::unordered_map<City, std::unordered_set<City>> cities_connections;
         std::unordered_map<City, Color> cities_colors;
-        // static std::unordered_map<City, std::unordered_set<City>> connections;
-        // static std::unordered_map<City, Color> cities_colors;
 
         //for constractor
         const static std::unordered_map<std::string, Color> colors_names;
@@ -29,7 +27,6 @@ namespace pandemic
         Board();
         int& operator [] (City city);
         friend std::ostream& operator << (std::ostream& os, Board& board);
-        // friend std::ostream& operator << (std::ostream& os, use 'this' instead);
         bool have_research_station(City city) const;
         Color get_city_color(City city) const;
         bool is_cities_connected(City, City) const;
